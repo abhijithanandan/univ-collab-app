@@ -24,13 +24,13 @@ Download and run easy_installer.sh
 
 Project | Apps | Status | Branch | Owner
 --- | --- | --- | --- | ---
-IITM-Startup-Project | Univ-Collab-APP |  | `frontend-beta` | [Aneesh K Johny]
-IITM-Startup-Project | Univ-Collab-APP |  | `backend-beta` | [Abhijith Anandakrishnan]
+IITM-Startup-Project | Univ-Collab-APP-frontend |  | `frontend-beta` | [Aneesh K Johny](aneeshkjohny2017@gmail.com)
+IITM-Startup-Project | Univ-Collab-APP-backend |  | `backend-beta` | [Abhijith Anandakrishnan](abhijithananthan@gmail.com)
 
 
 ## Core Team
 #### Program / Project Management
-* [Aneesh K Johny]
+* [Aneesh K Johny](aneeshkjohny2017@gmail.com)
 
 #### Platform Engineering
 * [Abhijith Anandakrishnan](abhijithananthan@gmail.com)
