@@ -148,26 +148,23 @@ if [[ -n $CONFIG_TERMINAL ]]; then
 	fi
 fi
 
+#Activating the python venv...
+source $ISP_ROOT/venv/bin/activate
+
 echo
-echo "--------------------------------------------------------------------------"
-echo " Migrating dijango app to newly created database $DB_NAME with owner $DB_USER"
-echo "--------------------------------------------------------------------------"
+echo " Migrating dijango app to newly created database $DB_NAME with owner $DB_USER ..."
 echo
 
 python $APP_HOME/univ-collab-app/youngster_chat/manage.py migrate
 
 echo
-echo "--------------------------------------------------------------------------"
 echo " Creating a dijango superuser:"
-echo "--------------------------------------------------------------------------"
 echo
 
 python $APP_HOME/univ-collab-app/youngster_chat/manage.py createsuperuser
 
 echo
-echo "--------------------------------------------------------------------------"
 echo " Running django server:"
-echo "--------------------------------------------------------------------------"
 echo
 echo "use commands: "
 echo "              >>> source $APP_HOME/univ-collab-app/venv/bin/activate"
