@@ -60,6 +60,7 @@ python3 -m venv $ISP_ROOT/venv
 source $ISP_ROOT/venv/bin/activate
 sudo apt-get install build-dep python-psycopg2
 pip install wheel 
-pip psycopg2 
+pip install psycopg2 
+pip install psycopg2-binary
 pip install django
 
