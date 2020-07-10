@@ -51,7 +51,7 @@ done
 sudo -u postgres psql -c "alter user postgres with password 'postgres'"
 
 # Create '<posgres-user>' with password '<posgres-user>' as superuser
-sudo -u postgres psql -v ON_ERROR_STOP=1 -q <<-EOSQL
+sudo -u postgres psql -v ON_ERROR_STOP=0 -q <<-EOSQL
       CREATE USER $DB_USER WITH PASSWORD '$DB_USER';
       ALTER USER $DB_USER WITH LOGIN SUPERUSER;
       ALTER USER $DB_USER CREATEROLE CREATEDB REPLICATION;
