@@ -15,6 +15,7 @@ export ISP_ROOT=$APP_HOME/$APP_NAME
 ISP_GIT=https://github.com/abhijithanandan/univ-collab-app.git
 DB_NAME=univ_collab_app
 ISP_PORT=8000
+DB_USER=abhi_admin
 
 echo
 echo "--------------------------------------------------------------------------"
@@ -99,7 +100,7 @@ echo "--------------------------------------------------------------------------
 echo "  Initialing PostgreSQL Database"
 echo "--------------------------------------------------------------------------"
 echo
-bash $ISP_ROOT/bin/install/initialize-postgres.sh abhi_admin 
+bash $ISP_ROOT/bin/install/initialize-postgres.sh $DB_USER 
 
 echo
 echo "--------------------------------------------------------------------------"

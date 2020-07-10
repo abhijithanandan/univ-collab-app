@@ -59,7 +59,8 @@ echo -e "\n---- Installing Django---"
 python3 -m venv $ISP_ROOT/venv
 source $ISP_ROOT/venv/bin/activate
 sudo apt-get install build-dep python-psycopg2
-pip3 install wheel 
-pip3 psycopg2 
-pip3 install django
+pip install wheel 
+pip install psycopg2 
+pip install psycopg2-binary
+pip install django
 
