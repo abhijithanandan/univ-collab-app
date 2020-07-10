@@ -55,8 +55,8 @@ sudo apt-get install -y python3.7 python3-pip python3.7-dev python3.7-venv pytho
 echo -e "\n--- Installing Postgres Client & Tools --"
 sudo apt-get install -y libpq-dev postgresql-client-common postgresql-client-12 postgresql-12
 
-echo -e "\n---- Installing Django at /var/univ-collab-app/venv----"
-sudo virtualenv $ISP_ROOT/venv
+echo -e "\n---- Installing Django---"
+python3 -m venv $ISP_ROOT/venv
 source $ISP_ROOT/venv/bin/activate
-pip install psycopg2 django
+pip3 install wheel psycopg2 django
 
