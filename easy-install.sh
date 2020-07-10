@@ -155,20 +155,20 @@ echo
 echo " Migrating dijango app to newly created database $DB_NAME with owner $DB_USER ..."
 echo
 
-python $APP_HOME/univ-collab-app/youngster_chat/manage.py migrate
+python $ISP_ROOT/youngster_chat/manage.py migrate
 
 echo
 echo " Creating a dijango superuser:"
 echo
 
-python $APP_HOME/univ-collab-app/youngster_chat/manage.py createsuperuser
+python $ISP_ROOT/youngster_chat/manage.py createsuperuser
 
 echo
 echo " Running django server:"
 echo
 echo "use commands: "
-echo "              >>> source $APP_HOME/univ-collab-app/venv/bin/activate"
-echo "              >>> python $APP_HOME/univ-collab-app/youngster_chat/manage.py runserver"
+echo "              >>> source $ISP_ROOT/venv/bin/activate"
+echo "              >>> python $ISP_ROOT/youngster_chat/manage.py runserver"
 echo "to setup environment and start dijango server"
 
 echo "  * Launch in Browser for admin login:"
