@@ -52,8 +52,7 @@ sudo apt-get install -y libsasl2-dev libldap2-dev libssl-dev
 echo -e "\n--- Installing Python 3 + pip3 --"
 sudo apt-get install -y python3.7 python3-pip python3.7-dev python3.7-venv python3-wheel python3-setuptools virtualenv
 
-echo -e "\n---- Installing nodeJS + NPM ----"
-sudo apt-get install -y nodejs npm node-less
+echo -e "\n---- Installing Django ----"
 
 echo -e "\n--- Installing Postgres Client & Tools --"
 sudo apt-get install -y libpq-dev postgresql-client-common postgresql-client-12 postgresql-12

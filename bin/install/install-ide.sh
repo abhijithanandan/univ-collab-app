@@ -21,5 +21,11 @@ echo
 echo "Installing PgAdmin4..."
 echo
 sudo apt install -y pgadmin4
+echo
+echo "Installing Eclipse..."
+echo
+sudo apt install default-jre
+sudo snap install --classic eclipse
+
 
 

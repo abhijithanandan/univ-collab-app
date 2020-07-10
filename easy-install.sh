@@ -21,7 +21,7 @@ echo "--------------------------------------------------------------------------
 echo
 echo " This installer will perform the following steps:"
 echo
-echo "    1. Install applications (Python / Node / Docker / Postgres / etc.)"
+echo "    1. Install applications (Python / Django / Docker / Postgres / etc.)"
 echo "    2. Install package dependenceis for Python & Node"
 echo
 echo "--------------------------------------------------------------------------"
@@ -92,7 +92,7 @@ echo "--------------------------------------------------------------------------
 echo "  Initialing PostgreSQL Database"
 echo "--------------------------------------------------------------------------"
 echo
-bash $ISP_ROOT/bin/install/initialize-postgres.sh isp 
+bash $ISP_ROOT/bin/install/initialize-postgres.sh abhi_admin 
 
 echo
 echo "--------------------------------------------------------------------------"

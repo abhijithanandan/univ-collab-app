@@ -4,7 +4,7 @@
 
 * Provide easy onboarding for new developers:
     * Automated installation of packages and tools
-    * Automated setup of the ISP with Django and AngularJS
+    * Automated setup of the ISP with Django Stack 
     
 * Standardize development:
     * Common IDE, Database and run configurations
@@ -15,10 +15,14 @@
     * Continuous build and qa environment for each application
     * Integration environment for testing application prior to production 
 
+## Project Stack
+
+HTML ,CSS, Javascript, Bootstrap, Angular JS, Python, Django, PostgresQL, Git
+
 
 ## Installation
 
-Download and run easy_installer.sh
+Download and run easy_install.sh
 
 ## Projects
 

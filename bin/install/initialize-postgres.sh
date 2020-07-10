@@ -19,7 +19,7 @@ if [[ ( -z $DB_USER ) ]]; then
   echo
   echo "Mandatory parameters missing. Usage:"
   echo
-  echo "  bash ${BASH_SOURCE[0]} <isp-user>"
+  echo "  bash ${BASH_SOURCE[0]} <posgres-user>"
   echo
 
   exit 1
@@ -50,7 +50,7 @@ done
 # Set the postgres user password to 'postgres'
 sudo -u postgres psql -c "alter user postgres with password 'postgres'"
 
-# Create 'isp' with password 'isp' as superuser
+# Create '<posgres-user>' with password '<posgres-user>' as superuser
 sudo -u postgres psql -v ON_ERROR_STOP=1 -q <<-EOSQL
       CREATE USER $DB_USER WITH PASSWORD '$DB_USER';
       ALTER USER $DB_USER WITH LOGIN SUPERUSER;
