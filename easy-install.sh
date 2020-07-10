@@ -43,6 +43,11 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]];then
   INSTALL_DEVTOOLS=1
 fi
+read -p " Configure your linux/mac terminal (y/N): " -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]];then
+  CONFIG_TERMINAL=1
+fi
 
 #--------------------------------------------------
 # Set up GIT if not configured
@@ -118,3 +123,23 @@ echo
 echo "        $ISP_ROOT/bin/git-setup.sh"
 echo
 echo "--------------------------------------------------------------------------"
+
+if [[ -n $CONFIG_TERMINAL ]]; then
+
+  echo
+  echo "--------------------------------------------------------------------------"
+  echo "  Configuring the bash terminal"
+
+
+  echo "--------------------------------------------------------------------------"
+
+echo
+echo "--------------------------------------------------------------------------"
+echo " Copying the configuration files and directory" 
+echo "--------------------------------------------------------------------------"
+echo
+
+cp -r $ISP_ROOT/.abhi-terminal-config ~/ 
+cat $ISP_ROOT/bash_profile >> ~/.bashrc
+source ~/.bashrc
+fi

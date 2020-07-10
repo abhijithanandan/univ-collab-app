@@ -8,7 +8,6 @@
 # bash git-setup.sh
 ################################################################################
 
-
 #--------------------------------------------------
 # Initial Git Configuration
 #--------------------------------------------------
@@ -27,6 +26,7 @@ fi
 
 # Ensure that credentails are cached for fast access
 git config --global credential.helper 'cache --timeout 360000'
+
 echo
 echo "--------------------------------------------------------------------------"
 echo "  Git configuration is complete."
