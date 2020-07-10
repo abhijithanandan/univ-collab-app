@@ -39,3 +39,5 @@ IITM-Startup-Project | Univ-Collab-APP-backend |  | `backend-beta` | [Abhijith A
 #### Platform Engineering
 * [Abhijith Anandakrishnan](abhijithananthan@gmail.com)
 
+#### Application Engineering
+* [Abhijith Anandakrishnan](abhijithananthan@gmail.com)
