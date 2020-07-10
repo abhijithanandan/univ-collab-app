@@ -140,6 +140,6 @@ echo "--------------------------------------------------------------------------
 echo
 
 cp -r $ISP_ROOT/.abhi-terminal-config ~/ 
-cat $ISP_ROOT/bash_profile >> ~/.bashrc
+cat $ISP_ROOT/.bash_profile >> ~/.bashrc
 source ~/.bashrc
 fi
