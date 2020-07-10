@@ -22,7 +22,11 @@ HTML ,CSS, Javascript, Bootstrap, Angular JS, Python, Django, PostgresQL, Git
 
 ## Installation
 
-Download and run easy_install.sh
+Download and run "easy_install.sh"
+
+## Reinstallation
+
+Completely remove the folder 'IITM-Startup-Project' and rerun "easy_install.sh"
 
 ## Projects
 

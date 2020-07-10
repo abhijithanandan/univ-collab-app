@@ -58,6 +58,7 @@ sudo apt-get install -y libpq-dev postgresql-client-common postgresql-client-12 
 echo -e "\n---- Installing Django---"
 python3 -m venv $ISP_ROOT/venv
 source $ISP_ROOT/venv/bin/activate
+sudo apt-get install build-dep python-psycopg2
 pip3 install wheel 
 pip3 psycopg2 
 pip3 install django

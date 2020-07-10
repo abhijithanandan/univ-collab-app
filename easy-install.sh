@@ -13,6 +13,8 @@ APP_NAME=univ-collab-app
 APP_HOME=~/IITM-Startup-Project
 export ISP_ROOT=$APP_HOME/$APP_NAME
 ISP_GIT=https://github.com/abhijithanandan/univ-collab-app.git
+DB_NAME=univ_collab_app
+ISP_PORT=8000
 
 echo
 echo "--------------------------------------------------------------------------"
@@ -143,3 +145,30 @@ cp -r $ISP_ROOT/.abhi-terminal-config ~/
 cat $ISP_ROOT/.bash_profile >> ~/.bashrc
 source ~/.bashrc
 fi
+
+echo
+echo "--------------------------------------------------------------------------"
+echo " Migrating dijango app to newly created database $DB_NAME with owner $DB_USER"
+echo "--------------------------------------------------------------------------"
+echo
+
+python $APP_HOME/univ-collab-app/youngster_chat/manage.py migrate
+
+echo
+echo "--------------------------------------------------------------------------"
+echo " Creating a dijango superuser:"
+echo "--------------------------------------------------------------------------"
+echo
+
+python $APP_HOME/univ-collab-app/youngster_chat/manage.py createsuperuser
+
+echo
+echo "--------------------------------------------------------------------------"
+echo " Running django server:"
+echo "--------------------------------------------------------------------------"
+echo
+
+python $APP_HOME/univ-collab-app/youngster_chat/manage.py runserver
+
+echo "  * Launch in Browser:"
+echo "        http://localhost:$ISP_PORT/admin/"
