@@ -100,7 +100,7 @@ echo "--------------------------------------------------------------------------
 echo "  Initialing PostgreSQL Database"
 echo "--------------------------------------------------------------------------"
 echo
-bash $ISP_ROOT/bin/install/initialize-postgres.sh $DB_USER 
+bash $ISP_ROOT/bin/install/initialize-postgres.sh $DB_USER $DB_NAME
 
 echo
 echo "--------------------------------------------------------------------------"

@@ -6,6 +6,7 @@
 ################################################################################
 
 DB_USER=$1
+DB_NAME=$2
 
 echo
 echo "--------------------------------------------------------------------------"
@@ -55,6 +56,7 @@ sudo -u postgres psql -v ON_ERROR_STOP=0 -q <<-EOSQL
       CREATE USER $DB_USER WITH PASSWORD '$DB_USER';
       ALTER USER $DB_USER WITH LOGIN SUPERUSER;
       ALTER USER $DB_USER CREATEROLE CREATEDB REPLICATION;
+      CREATE DATABASE $DB_NAME;
 EOSQL
 
 sudo -u postgres psql -v ON_ERROR_STOP=1 -q <<-EOSQL
