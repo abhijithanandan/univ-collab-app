@@ -19,6 +19,9 @@
 
 HTML ,CSS, Javascript, Bootstrap, Angular JS, Python, Django, PostgresQL, Git
 
+## IDE
+
+The directory contains debug/run configurations for pycharm and vscode (see .idea and .vscode folders)
 
 ## Installation
 

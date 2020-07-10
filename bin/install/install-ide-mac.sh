@@ -22,8 +22,6 @@ echo "Installing PgAdmin4..."
 echo
 sudo apt install -y pgadmin4
 echo
-echo "Installing Eclipse..."
-echo
 
 
 
