@@ -134,15 +134,18 @@ if [[ -n $CONFIG_TERMINAL ]]; then
   echo "  Configuring the bash terminal"
   echo "--------------------------------------------------------------------------"
 
-echo
-echo "--------------------------------------------------------------------------"
-echo " Copying the configuration files and directory" 
-echo "--------------------------------------------------------------------------"
-echo
+	echo
+	echo "--------------------------------------------------------------------------"
+	echo " Copying the configuration files and directory" 
+	echo "--------------------------------------------------------------------------"
+	echo
 
-cp -r $ISP_ROOT/.abhi-terminal-config ~/ 
-cat $ISP_ROOT/.bash_profile >> ~/.bashrc
-source ~/.bashrc
+	if ! grep -Fx  "#Git Configuration" ~/.bashrc
+	then
+		cp -r $ISP_ROOT/.abhi-terminal-config ~/ 
+		cat $ISP_ROOT/.bash_profile >> ~/.bashrc
+		source ~/.bashrc
+	fi
 fi
 
 echo
