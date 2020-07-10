@@ -166,8 +166,7 @@ echo "--------------------------------------------------------------------------
 echo " Running django server:"
 echo "--------------------------------------------------------------------------"
 echo
-
-python $APP_HOME/univ-collab-app/youngster_chat/manage.py runserver
+echo "use command : >>> 'python $APP_HOME/univ-collab-app/youngster_chat/manage.py runserver' to start dijango server"
 
 echo "  * Launch in Browser:"
 echo "        http://localhost:$ISP_PORT/admin/"
