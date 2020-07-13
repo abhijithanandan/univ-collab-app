@@ -11,9 +11,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to right, #76da9c, #62dd96, #41d483);
+  /*background-image: linear-gradient(to right, #76da9c, #62dd96, #41d483);*/
   margin: auto;
-  min-width: 980px;
   h1 {
     font-weight: 700;
     font-size: xx-large;
@@ -25,7 +24,8 @@ body {
 .container{
   width: 100vw;
   height: 100vh;
-  display: grid;
+  display: flex;
+  flex-direction: row;
   grid-template-columns: repeat(2, 1fr);
   grid-gap :7rem;
   padding: 0 2rem;
@@ -35,12 +35,13 @@ body {
 }
 
 .login-container {
+  display: grid;
   padding: 50px;
   background-color: white;
   box-shadow: #888;
   border-radius: 25px;
   margin: auto;
-  width: 80%;
+  width: 40%;
 }
 
 
@@ -219,7 +220,6 @@ span.psw {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255);
   ul li {
     display: inline-flex;
     padding-left: 25px;
@@ -255,5 +255,10 @@ span.psw {
      width: 100%;
   }
 }
-  
+
+@media (max-width: 1199.98px) {
+  .pic{
+    display: none;
+  }
+}
   
