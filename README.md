@@ -17,7 +17,7 @@
 
 ## Project Stack
 
-HTML ,CSS, Javascript, Bootstrap, Angular JS, Python, Django, PostgresQL, Git
+HTML ,CSS, Javascript, Bootstrap, Angular JS, Python, Django, PostgresQL, Docker, Git
 
 ## IDE
 
