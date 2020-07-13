@@ -1,268 +1,264 @@
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-image: linear-gradient(to right, #fdfdfd, #e7e6e7, #e2e2dc);
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(to right, #76da9c, #62dd96, #41d483);
-    margin: auto;
-    min-width: 980px;
-  }
-  .login-container {
-    padding: 50px;
-    background-color: white;
-    box-shadow: #888;
-    border-radius: 25px;
-    margin: auto;
-    width: 80%;
-  }
-  .container{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap :7rem;
-    padding: 0 2rem;
-  }
-  
+  font-family: 'Montserrat', sans-serif;
+  background-image: linear-gradient(to right, #fdfdfd, #e7e6e7, #e2e2dc);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background-image: linear-gradient(to right, #76da9c, #62dd96, #41d483);*/ 
+  margin: auto;
   h1 {
     font-weight: 700;
     font-size: xx-large;
     text-align: center;
     color:black;
   }
-  
-  .container p {
+}
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap :7rem;
+  padding: 0 2rem;
+  p {
     color: #888;
   }
-  
-  .pic{
-      display: flex;
-      justify-content: flex-end;
-    align-items: center;
+}
+
+.login-container {
+  display: grid;
+  padding: 50px;
+  background-color: white;
+  box-shadow: #888;
+  border-radius: 25px;
+  margin: auto;
+  width: 40%;
+}
+
+
+.pic{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  img{
+    width: 500px;
   }
-  
-  .pic img{
-      width: 500px;
-  }
-  
-  .login-content{
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: center;
-  }
-  
-  #slider {
-    opacity:1;
-    transition: opacity 3s; 
-  }
-  
-  #slider.fadeOut {
+}
+
+
+.login-content{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+#slider {
+  opacity:1;
+  transition: opacity 3s; 
+  .fadeOut {
     opacity:0;
     transition: 3s;
   }
-  
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-    border-radius: 25px;
-    font-size: medium;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 25px;
+  font-size: medium;
+  &:focus {
+    background-color: rgb(156, 243, 199);
+    outline: thick;
   }
-  
-  input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  
-  
-  hr {
-    border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
-  }
-  
-  .registerbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-    border-radius: 25px;
-  }
-  
-  .registerbtn:hover {
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 25px;
+  &:hover {
     opacity: 1;
   }
-  
-  
-  a {
-    color: dodgerblue;
-  }
-  
-  .control-group {
-    margin-bottom: auto;
-    margin-top: auto;
-    padding: 15px;
-    padding-left: 0%;
-    padding-bottom: 10px;
-  }
-  
-  
-  .gender-radio {
-    margin-bottom: auto;
-    margin-top: auto;
-    padding: 15px;
-    padding-left: 0%;
-    padding-top: 10px;
-  }
-  
-  .signin {
-    text-align: center;
-  }
-  
-  .dob-controls {
-    align-items: right;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 25px;
-    font-size: medium;
-  }
-  
-  
-  button:hover {
+}
+
+
+a {
+  color: dodgerblue;
+}
+
+.control-group {
+  margin-bottom: auto;
+  margin-top: auto;
+  padding: 15px;
+  padding-left: 0%;
+  padding-bottom: 10px;
+}
+
+
+.gender-radio {
+  margin-bottom: auto;
+  margin-top: auto;
+  padding: 15px;
+  padding-left: 0%;
+  padding-top: 10px;
+}
+
+.signin {
+  text-align: center;
+}
+
+.dob-controls {
+  align-items: right;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 25px;
+  font-size: medium;
+  &:hover {
     opacity: 0.8;
   }
-  
-  
-  .cancelbtn {
-    width: auto;
-    padding: 16px 20px;
-    background-color: #f44336;
-  }
-  
-  
-  .imgcontainer {
-    text-align: center;
-    margin: 100px 0 100px 0;
-  }
-  
-  .signup-container {
-    padding: 50px;
-    background-color: white;
-    border-radius: 25px;
-    margin: auto;
-    width: 40%;
-  }
-  
-  span.psw {
-    float: right;
-    padding-top: 25px;
-  }
-  
-  
-  .modal {
-    display: none;
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-    padding-top: 60px;
-  }
-  
-  
-  .modal-content {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    margin-left: 200px;
-    background-color: #fefefe;
-    border: 1px solid #888;
-    width: 50%;
-    align-self: center;
-  }
-  
-  
-  .close {
-    position: absolute;
-    right: 25px;
-    top: 0px;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+
+.cancelbtn {
+  width: auto;
+  padding: 16px 20px;
+  background-color: #f44336;
+}
+
+.cancelbtn-fp {
+  width: 100%;
+  padding: 16px 20px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 100px 0 100px 0;
+}
+
+.signup-container {
+  background-color: white;
+  border-radius: 25px;
+  width: 100%;
+}
+
+span.psw {
+  float: right;
+  padding-top: 25px;
+}
+
+
+.modal {
+  padding: 50px;
+  background-color: white;
+  box-shadow: #888;
+  border-radius: 25px;
+  margin: auto;
+  width: 80%;
+}
+
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-left: 200px;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  width: 50%;
+  align-self: center;
+}
+
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0px;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+  &:hover,&:focus{
     color: #38d39f;
     cursor: pointer;
   }
-  
-  .main-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-  }
-  
-  .main-footer  ul li {
+}
+
+.main-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ul li {
     display: inline-flex;
     padding-left: 25px;
     padding-right: 25px;
     list-style: none;
   }
+  a {
+  text-decoration: none;
+  }
+}
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
   
-  .main-footer a {
-    text-decoration: none;
-  }
-  .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-  }
-    
-  @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-  }
-    
-  @keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
-  }
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
   
-  @media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
   }
-  
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .pic{
+    display: none;
+  }
+}
   

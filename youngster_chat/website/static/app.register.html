@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Log in or Sign up</title>
+    <title>Sign up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="javascript/text" href="js/main.js">
@@ -11,14 +11,14 @@
   <div class="header">
     <h1>Welcome</h1>
   </div>
-  <form action="/action_page.php">
-    <div class="container">
-      <div class="pic">
-        <img id="slider"  src="img/analyze.svg">
-      </div>
-      <div class="login-container">
-        <h2>Create a new account</h2>
-        <p>It's eazy.</p>
+  <div class="container">
+    <div class="pic">
+      <img id="slider"  src="img/analyze.svg">
+    </div>
+    <div class="login-container">
+      <h2>Create a new account</h2>
+      <p>It's eazy.</p>
+      <form action="/action_page.php">
         <input id="ip-sp1" type="text" placeholder="Enter Name" name="name" id="name" required>
         <input id="ip-sp2" type="text" placeholder="Enter Email or Phone" name="email" id="email" required>
         <input id="ip-sp3" type="password" placeholder="New Password" name="psw" id="psw" required>
@@ -210,30 +210,10 @@
         </div>
         <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
         <button type="submit" class="registerbtn" onclick="addAttr()">Register</button>
-        <p class="signin" >Already have an account? <button onclick="removeAttr()" style="width:auto;">Login</button></p>
-      </div>
-    </div>
-    <div id="signup" class="modal">
-      <form class="modal-content animate" action="/action_page.php" method="post">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('signup').style.display='none'; document.getElementById('in-si1').value = '';document.getElementById('in-si2').value = '';" class="close" title="Close Modal">&times;</span>
-        </div>
-        <div class="signup-container">
-          <input id="in-si1" type="text" placeholder="Enter Username" name="uname" required>
-          <input id="in-si2" type="password" placeholder="Enter Password" name="psw" required>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-          <button type="submit">Login</button>
-          <div>
-            <button type="button" onclick="document.getElementById('signup').style.display='none'; document.getElementById('in-si1').value = '';document.getElementById('in-si2').value = '';" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-          </div>
-        </div>
-        
       </form>
+      <p class="signin" >Already have an account? <a href="app.login.html"><button type="submit" onclick="removeAttr()" style="width:auto;">Login</button></a></p>
     </div>
-  </form>
+  </div>
   <script type="text/javascript" src="js/subs.js"></script>
   <footer class="main-footer">
     <div>

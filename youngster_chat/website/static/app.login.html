@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="javascript/text" href="js/main.js">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="header">
+    <h1>Welcome</h1>
+  </div>
+  <form action="/action_page.php">
+    <div class="container">
+      <div class="pic">
+        <img id="slider"  src="img/analyze.svg">
+      </div>
+      <div id="signup" class="modal">
+        <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="signup-container">
+            <input id="in-si1" type="text" placeholder="Enter Username" name="uname" required>
+            <input id="in-si2" type="password" placeholder="Enter Password" name="psw" required>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <button type="submit">Login</button>
+            <div>
+              <a href="app.register.html">
+              <button type="button" 
+                      onclick="document.getElementById('in-si1').value = '';
+                              document.getElementById('in-si2').value = '';" 
+                      class="cancelbtn">Cancel
+              </button></a>
+              <span class="psw">Forgot <a href="app.forpsw.html">password?</a></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </form>
+  <script type="text/javascript" src="js/subs.js"></script>
+  <footer class="main-footer">
+    <div>
+      <ul>
+        <li><a href="#">about</a></li>
+        <li><a href="#">contact us</a></li>
+        <li><a href="#">faq</a></li>
+      </ul>
+      <p style="text-align: center;">Copyright &copy 2020</p>
+    </div>
+  </footer>
+</body>
+</html>
+
