@@ -1,4 +1,4 @@
-var modal = document.getElementById('signup');
+/*var modal = document.getElementById('signup');
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -6,7 +6,7 @@ window.onclick = function(event) {
         document.getElementById('in-si1').value = '';
         document.getElementById('in-si2').value = '';
     }
-}
+}*/
  
 function addAttr() { 
     document.getElementById('ip-sp1').setAttribute("required");
@@ -23,7 +23,7 @@ function addAttr() {
 
 
 function removeAttr() { 
-    document.getElementById('signup').style.display='block';
+    /*document.getElementById('signup').style.display='block';*/
     document.getElementById('ip-sp1').removeAttribute("required");
     document.getElementById('ip-sp2').removeAttribute("required");
     document.getElementById('ip-sp3').removeAttribute("required");
