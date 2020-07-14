@@ -1,4 +1,4 @@
-var modal = document.getElementById('signup');
+/*var modal = document.getElementById('signup');
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -6,34 +6,7 @@ window.onclick = function(event) {
         document.getElementById('in-si1').value = '';
         document.getElementById('in-si2').value = '';
     }
-}
- 
-function addAttr() { 
-    document.getElementById('ip-sp1').setAttribute("required");
-    document.getElementById('ip-sp2').setAttribute("required");
-    document.getElementById('ip-sp3').setAttribute("required");
-    document.getElementById('ip-sp4').setAttribute("required");
-    document.getElementById('ip-sp5').setAttribute("required");
-    document.getElementById('ip-sp6').setAttribute("required");
-    document.getElementById('ip-sp7').setAttribute("required");
-    document.getElementById('ip-sp8').setAttribute("required");
-    document.getElementById('ip-sp9').setAttribute("required");
-
-}
-
-
-function removeAttr() { 
-    document.getElementById('signup').style.display='block';
-    document.getElementById('ip-sp1').removeAttribute("required");
-    document.getElementById('ip-sp2').removeAttribute("required");
-    document.getElementById('ip-sp3').removeAttribute("required");
-    document.getElementById('ip-sp4').removeAttribute("required");
-    document.getElementById('ip-sp5').removeAttribute("required");
-    document.getElementById('ip-sp6').removeAttribute("required");
-    document.getElementById('ip-sp7').removeAttribute("required");
-    document.getElementById('ip-sp8').removeAttribute("required");
-    document.getElementById('ip-sp9').removeAttribute("required");
-}
+}*/
 
 document.addEventListener("DOMContentLoaded", function() {
     var elements = document.getElementsByTagName("INPUT");
