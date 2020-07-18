@@ -3,6 +3,7 @@ body {
   background-image: -webkit-gradient(linear, left top, right top, from(#fdfdfd), color-stop(#e7e6e7), to(#e2e2dc));
   background-image: linear-gradient(to right, #fdfdfd, #e7e6e7, #e2e2dc);
   margin: auto;
+  font-size: small;
 }
 
 * {
