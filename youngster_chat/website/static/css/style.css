@@ -1,5 +1,4 @@
 body {
-  font-family: 'Montserrat', sans-serif;
   background-image: -webkit-gradient(linear, left top, right top, from(#fdfdfd), color-stop(#e7e6e7), to(#e2e2dc));
   background-image: linear-gradient(to right, #fdfdfd, #e7e6e7, #e2e2dc);
   margin: auto;
@@ -11,10 +10,12 @@ body {
           box-sizing: border-box;
 }
 
+html, body, h1, h2, h3, h4, h5 {
+  font-family: Roboto, "Segoe UI", "San Francisco", "Open Sans", Verdana, Geneva, sans-serif;
+}
+
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -36,7 +37,7 @@ body {
 
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,9 +58,23 @@ body {
   background-color: white;
   -webkit-box-shadow: #888;
           box-shadow: #888;
-  border-radius: 25px;
+  border-radius: 5px;
   margin: auto;
   width: 35%;
+}
+
+.modal {
+  display: -ms-grid;
+  display: grid;
+  padding: 25px;
+  background-color: white;
+  -webkit-box-shadow: #888;
+          box-shadow: #888;
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  border-radius: 10px;
+  margin: auto;
+  width: 25%;
+  margin-right: 220px;
 }
 
 .pic {
@@ -73,6 +88,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: auto;
+  margin-left: 220px;
   padding: 50px;
 }
 
@@ -94,13 +110,14 @@ body {
 
 input[type=text], input[type=password] {
   width: 100%;
+  height: 35px;
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin: 5px 0 5px 0;
   display: inline-block;
-  border: none;
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   background: #f1f1f1;
-  border-radius: 25px;
-  font-size: medium;
+  border-radius: 10px;
+  font-size: small;
 }
 
 input[type=text]:focus, input[type=password]:focus {
@@ -116,13 +133,13 @@ hr {
 .registerbtn {
   background-color: #4CAF50;
   color: white;
-  padding: 16px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 100%;
+  height: 35px;
   opacity: 0.9;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 .registerbtn:hover {
@@ -162,12 +179,12 @@ a {
 button {
   background-color: #4CAF50;
   color: white;
-  padding: 16px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 100%;
-  border-radius: 25px;
+  height: 35px;
+  border-radius: 10px;
   font-size: medium;
 }
 
@@ -177,13 +194,11 @@ button:hover {
 
 .cancelbtn {
   width: auto;
-  padding: 16px 20px;
   background-color: #f44336;
 }
 
 .cancelbtn-fp {
   width: 100%;
-  padding: 16px 20px;
   background-color: #f44336;
 }
 
@@ -200,19 +215,7 @@ button:hover {
 
 span.psw {
   float: right;
-  padding-top: 25px;
-}
-
-.modal {
-  display: -ms-grid;
-  display: grid;
-  padding: 50px;
-  background-color: white;
-  -webkit-box-shadow: #888;
-          box-shadow: #888;
-  border-radius: 25px;
-  margin: auto;
-  width: 35%;
+  padding-top: 16px;
 }
 
 .modal-content {
@@ -257,12 +260,14 @@ span.psw {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 0em;
 }
 
 .main-footer ul li {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  margin-left: 0em;
   padding-left: 25px;
   padding-right: 25px;
   list-style: none;
