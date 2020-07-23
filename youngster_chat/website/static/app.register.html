@@ -3,21 +3,22 @@
 <head>
     <title>Sign up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="javascript/text" href="js/main.js">
 </head>
 <body>
   <div class="header">
-    <h1>Welcome</h1>
+    <div>
+      <form action="" type="search" placeholder="Search"></form>
+    </div>
   </div>
-  <div class="container">
+  <div class="signup-container">
     <div class="pic">
       <img id="slider"  src="img/analyze.svg">
     </div>
     <div class="modal">
-      <h2>Create a new account</h2>
-      <p>It's eazy.</p>
+      <h2 style="text-align: center;">Varitales</h2>
+      <p>Crete an account to see and socialise with your long lost friends, It's eazy.</p>
       <form action="/action_page.php">
         <input id="ip-sp1" type="text" placeholder="Enter Name" name="name" id="name" required>
         <input id="ip-sp2" type="text" placeholder="Enter Email or Phone" name="email" id="email" required>
@@ -211,20 +212,24 @@
         <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
         <button type="submit" class="registerbtn" onclick="addAttr()">Register</button>
       </form>
+      <div class="ormain"><div class="ordiv1"></div><div class="ordiv2">or</div><div class="ordiv1"></div></div>
       <p class="signin" >Already have an account? <a href="app.login.html"><button type="submit" onclick="removeAttr()" style="width:auto;">Login</button></a></p>
+      <p>Get the app:</p>
+      <div class="storelink">
+        <a href="#"><img class="storelink-apl"  src="img/appstore.png" alt="appstore"></a>
+        <a href="#"><img class="storelink-ggl"  src="img/playstore.png" alt="playstore"></a>
+      </div>
     </div>
   </div>
-  <script type="text/javascript" src="js/subs.js"></script>
   <footer class="main-footer">
-    <div>
-      <ul>
-        <li><a href="#">about</a></li>
-        <li><a href="#">contact us</a></li>
-        <li><a href="#">faq</a></li>
-      </ul>
-      <p style="text-align: center;">Copyright &copy 2020</p>
-    </div>
+    <ul>
+      <li style="padding-left: 0px;"><a href="#">ABOUT</a></li>
+      <li><a href="#">CONTACTS</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+    <p style="text-align: center;">BinBee &copy 2020 FROM FRESHSTART</p>
   </footer>
+  <script type="text/javascript" src="js/subs.js"></script>
 </body>
 </html>
 

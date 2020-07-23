@@ -5,32 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="javascript/text" href="js/main.js">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="header">
     <h1>Welcome</h1>
   </div>
   <form action="/action_page.php">
-    <div class="container">
+    <div class="login-container">
       <div class="pic">
         <img id="slider"  src="img/analyze.svg">
       </div>
       <div id="signup" class="modal">
-        <h2>Forgot Password</h2>
-        <p>Please enter the registered email to reset the password</p>
+        <img class="locked" src="img/fearicon.png" alt="Account Locked??">
+        <h2 style="text-align: center;">Forgot Password ?</h2>
+        <p style="text-align: justify;">Enter your username,email or phone number and we'll send you a link to get back into your account.</p>
         <form class="modal-content animate" action="/action_page.php" method="post">
-          <div class="signup-container">
+          <div>
             <input id="in-si1" type="text" placeholder="Enter Registred Email" name="uname" required>
             <button type="submit">Send</button>
+            <div class="ormain"><div class="ordiv1"></div><div class="ordiv2">or</div><div class="ordiv1"></div></div>
             <div>
               <a href="app.register.html">
               <button type="button" 
                       onclick="document.getElementById('in-si1').value = '';
                               document.getElementById('in-si2').value = '';" 
-                      class="cancelbtn-fp">Cancel
+                      class="sighupBtnForpwd">Create An Account
               </button></a>
             </div>
+            <div class="btlogin"><a href="app.login.html">Back to Login</a>
+              </div>
           </div>
         </form>
       </div>
@@ -38,14 +41,12 @@
   </form>
   <script type="text/javascript" src="js/subs.js"></script>
   <footer class="main-footer">
-    <div>
-      <ul>
-        <li><a href="#">about</a></li>
-        <li><a href="#">contact us</a></li>
-        <li><a href="#">faq</a></li>
-      </ul>
-      <p style="text-align: center;">Copyright &copy 2020</p>
-    </div>
+    <ul>
+      <li style="padding-left: 0px;"><a href="#">ABOUT</a></li>
+      <li><a href="#">CONTACTS</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+    <p style="text-align: center;">BinBee &copy 2020 FROM FRESHSTART</p>
   </footer>
 </body>
 </html>
