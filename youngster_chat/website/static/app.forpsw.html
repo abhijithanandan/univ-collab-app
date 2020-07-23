@@ -11,25 +11,29 @@
     <h1>Welcome</h1>
   </div>
   <form action="/action_page.php">
-    <div class="container">
+    <div class="login-container">
       <div class="pic">
         <img id="slider"  src="img/analyze.svg">
       </div>
       <div id="signup" class="modal">
-        <h2>Forgot Password</h2>
-        <p>Please enter the registered email to reset the password</p>
+        <img class="locked" src="img/fearicon.png" alt="Account Locked??">
+        <h2 style="text-align: center;">Forgot Password ?</h2>
+        <p style="text-align: justify;">Enter your username,email or phone number and we'll send you a link to get back into your account.</p>
         <form class="modal-content animate" action="/action_page.php" method="post">
-          <div class="signup-container">
+          <div>
             <input id="in-si1" type="text" placeholder="Enter Registred Email" name="uname" required>
             <button type="submit">Send</button>
+            <div class="ormain"><div class="ordiv1"></div><div class="ordiv2">or</div><div class="ordiv1"></div></div>
             <div>
               <a href="app.register.html">
               <button type="button" 
                       onclick="document.getElementById('in-si1').value = '';
                               document.getElementById('in-si2').value = '';" 
-                      class="cancelbtn-fp">Cancel
+                      class="sighupBtnForpwd">Create An Account
               </button></a>
             </div>
+            <div class="btlogin"><a href="app.login.html">Back to Login</a>
+              </div>
           </div>
         </form>
       </div>

@@ -11,29 +11,36 @@
     <h1>Welcome</h1>
   </div>
   <form action="/action_page.php">
-    <div class="container">
+    <div class="login-container">
       <div class="pic">
         <img id="slider"  src="img/analyze.svg">
       </div>
       <div id="signup" class="modal">
         <h2>Log in</h2>
-        <p>Log in and explore the world through a different sight.</p>
         <form class="modal-content animate" action="/action_page.php" method="post">
-          <div class="signup-container">
+          <div>
             <input id="in-si1" type="text" placeholder="Enter Username" name="uname" required>
             <input id="in-si2" type="password" placeholder="Enter Password" name="psw" required>
             <label>
               <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
             <button type="submit">Login</button>
+            <div class="ormain"><div class="ordiv1"></div><div class="ordiv2">or</div><div class="ordiv1"></div></div>
+            <div>
+              <span class="psw"><a href="app.forpsw.html">Forgot password?</a></span>
+            </div>
             <div>
               <a href="app.register.html">
-              <button type="button" 
-                      onclick="document.getElementById('in-si1').value = '';
-                              document.getElementById('in-si2').value = '';" 
-                      class="cancelbtn">Cancel
-              </button></a>
-              <span class="psw"><a href="app.forpsw.html">Forgot password?</a></span>
+                <button type="button" 
+                        onclick="document.getElementById('in-si1').value = '';
+                                document.getElementById('in-si2').value = '';" 
+                        class="sighupBtnLogin">Sign Up
+                </button></a>
+            </div>
+            <p>Get the app:</p>
+            <div class="storelink">
+              <a href="#"><img class="storelink-apl"  src="img/appstore.png" alt="appstore"></a>
+              <a href="#"><img class="storelink-ggl"  src="img/playstore.png" alt="playstore"></a>
             </div>
           </div>
         </form>

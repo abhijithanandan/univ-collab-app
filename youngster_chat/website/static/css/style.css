@@ -15,29 +15,30 @@ html, body, h1, h2, h3, h4, h5 {
 }
 
 .header {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: -webkit-gradient(linear, left top, right top, from(#76da9c), color-stop(#62dd96), to(#41d483));
-  background-image: linear-gradient(to right, #76da9c, #62dd96, #41d483);
+  background-image: -webkit-gradient(linear, left top, right top, from(#76a5da), color-stop(#5936f4), to(#4caf50));
+  background-image: linear-gradient(to right, #76a5da, #5936f4, #4caf50);
   margin: auto;
-  height: 100px;
+  height: 50px;
 }
 
 .header h1 {
   font-weight: 700;
-  font-size: xx-large;
   text-align: center;
-  color: black;
+  color: #ad6c6c;
 }
 
-.container {
+.signup-container {
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,22 +46,28 @@ html, body, h1, h2, h3, h4, h5 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  overflow: auto;
 }
 
-.container p {
+.signup-container p {
   color: #888;
 }
 
 .login-container {
-  display: -ms-grid;
-  display: grid;
-  padding: 50px;
-  background-color: white;
-  -webkit-box-shadow: #888;
-          box-shadow: #888;
-  border-radius: 5px;
-  margin: auto;
-  width: 35%;
+  width: 100vw;
+  height: 85vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow: auto;
+}
+
+.login-container p {
+  color: #888;
 }
 
 .modal {
@@ -75,6 +82,13 @@ html, body, h1, h2, h3, h4, h5 {
   margin: auto;
   width: 25%;
   margin-right: 220px;
+}
+
+.locked {
+  height: 100px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pic {
@@ -94,6 +108,98 @@ html, body, h1, h2, h3, h4, h5 {
 
 .pic img {
   width: 500px;
+}
+
+.ormain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  border: 0 solid #000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.ormain .ordiv1 {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  background-color: rgba(var(--b38, 219, 219, 219), 1);
+  height: 2px;
+  position: relative;
+  top: .45em;
+}
+
+.ormain .ordiv2 {
+  color: rgba(var(--f52, 142, 142, 142), 1);
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15px;
+  margin: 0 18px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-transform: uppercase;
+}
+
+.btlogin {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 95px;
+  padding-top: 20px;
+  text-transform: capitalize;
+}
+
+.btlogin a {
+  color: rgba(var(--f52, 142, 142, 142), 1);
+  text-decoration: none;
+}
+
+.storelink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px 0 10px 0;
+}
+
+.storelink .storelink-apl {
+  padding: 5px;
+  height: 43px;
+  width: 121px;
+  vertical-align: baseline;
+}
+
+.storelink .storelink-ggl {
+  padding: 5px;
+  height: 43px;
+  width: 121px;
+  vertical-align: baseline;
 }
 
 #slider {
@@ -148,6 +254,7 @@ hr {
 
 a {
   color: dodgerblue;
+  color: #5936f4;
 }
 
 .control-group {
@@ -168,6 +275,7 @@ a {
 
 .signin {
   text-align: center;
+  margin: 0em;
 }
 
 .dob-controls {
@@ -192,25 +300,19 @@ button:hover {
   opacity: 0.8;
 }
 
-.cancelbtn {
+.sighupBtnLogin {
   width: auto;
-  background-color: #f44336;
+  background-color: #4CAF50;
 }
 
-.cancelbtn-fp {
+.sighupBtnForpwd {
   width: 100%;
-  background-color: #f44336;
+  background-color: #5936f4;
 }
 
 .imgcontainer {
   text-align: center;
   margin: 100px 0 100px 0;
-}
-
-.signup-container {
-  background-color: white;
-  border-radius: 25px;
-  width: 100%;
 }
 
 span.psw {
