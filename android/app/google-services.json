@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "47927357086",
+    "firebase_url": "https://freshstart-53ac4.firebaseio.com",
+    "project_id": "freshstart-53ac4",
+    "storage_bucket": "freshstart-53ac4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47927357086:android:bb4f3f4f5cf84fa0cb158f",
+        "android_client_info": {
+          "package_name": "in.co.freshstart.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47927357086-eapmg0jq1kvstglsmq86plg45035qri4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.co.freshstart.android",
+            "certificate_hash": "d07f5c1b90991b1778e7d4949f3a5d0a34f05d6c"
+          }
+        },
+        {
+          "client_id": "47927357086-m61it6j0nsm7tu61fvo3l1lbu3fje1s9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLN5RvPg41fini8o5_pmoirjRNOM9nyN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47927357086-m61it6j0nsm7tu61fvo3l1lbu3fje1s9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
