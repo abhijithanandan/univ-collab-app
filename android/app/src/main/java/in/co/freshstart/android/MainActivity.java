@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -21,6 +23,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import java.util.Objects;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private FirebaseAuth mAuth;
     private DatabaseReference UserRef;
+    private CircleImageView navProfileImage;
+    private TextView navProfileName;
+    String CurrentUserID;
+    private FirebaseUser user;
+    private ImageButton addNewPostButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        UserRef = FirebaseDatabase.getInstance().getReference().child("Users");
-
+        user = FirebaseAuth.getInstance().getCurrentUser();
         mToolbar = (Toolbar) findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Home");
@@ -51,15 +63,58 @@ public class MainActivity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         View navView = navigationView.inflateHeaderView(R.layout.navigation_header);
+        navProfileImage = (CircleImageView) navView.findViewById(R.id.nav_profile_image);
+        navProfileName = navView.findViewById(R.id.nav_user_full_name);
+        addNewPostButton = (ImageButton) findViewById(R.id.add_new_post_button);
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        if (user != null){
+
+            CurrentUserID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+            UserRef = FirebaseDatabase.getInstance().getReference().child("Users");
+
+            UserRef.child(CurrentUserID).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                    if(snapshot.hasChild("fullname")){
+
+                        String fullName = snapshot.child("fullname").getValue().toString();
+                        navProfileName.setText(fullName);
+                    }
+                    if(snapshot.hasChild("profileimage")) {
+
+                        String image = snapshot.child("profileimage").getValue().toString();
+                        Picasso.with(MainActivity.this).load(image).placeholder(R.drawable.profile).into(navProfileImage);
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this, "Profile Image does not exist", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+        else {
+
+            sendUserToLoginActivity();
+        }
+
+        addNewPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                
-                UserMenuSelector(item);
-                return false;
+            public void onClick(View view) {
+                SendUserToPostActivity();
             }
         });
+    }
+
+    private void SendUserToPostActivity() {
+
+        Intent addNewPostIntent = new Intent(MainActivity.this, PostActivity.class);
+        startActivity(addNewPostIntent);
     }
 
 
@@ -128,6 +183,10 @@ public class MainActivity extends AppCompatActivity {
     private void UserMenuSelector(MenuItem item) {
 
         switch (item.getItemId()){
+
+            case R.id.nav_post:
+                SendUserToPostActivity();
+                break;
 
             case R.id.nav_profile:
                 Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();

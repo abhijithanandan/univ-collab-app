@@ -90,10 +90,14 @@ public class SetupActivity extends AppCompatActivity {
 
                 if(snapshot.exists()){
 
-                    String image = snapshot.child("profileimage").getValue().toString();
+                    if(snapshot.hasChild("profileimage")){
 
-                    Picasso.with(SetupActivity.this).load(image).placeholder(R.drawable.profile).into(ProfileImage);
-
+                        String image = snapshot.child("profileimage").getValue().toString();
+                        Picasso.with(SetupActivity.this).load(image).placeholder(R.drawable.profile).into(ProfileImage);
+                    }
+                    else{
+                        Toast.makeText(SetupActivity.this, "Pleas select profile image first", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 
@@ -257,7 +261,7 @@ public class SetupActivity extends AppCompatActivity {
 
     private void SendUserToMainActivity() {
 
-        Intent mainIntent = new Intent(this, MainActivity.class);
+        Intent mainIntent = new Intent(SetupActivity.this, MainActivity.class);
         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(mainIntent);
         finish();
