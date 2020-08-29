@@ -20,6 +20,7 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -123,25 +124,43 @@ public class PostActivity extends AppCompatActivity {
 
         postRandomName = saveCurrentDate+saveCurrentTime;
 
-        StorageReference filePath = PostImageReference.child("Post Images").child(ImageUri.getLastPathSegment() + postRandomName + ".jpg");
-        filePath.putFile(ImageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                if(task.isSuccessful()){
+        final StorageReference filePath = PostImageReference.child("Post Images").child(ImageUri.getLastPathSegment() + postRandomName + ".jpg");
+//        filePath.putFile(ImageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+//                if(task.isSuccessful()){
+//
+//                    downloadUrl = task.getResult().getMetadata().getReference().getDownloadUrl().toString();
+//                    Toast.makeText(PostActivity.this, "Image uploaded successfully", Toast.LENGTH_SHORT).show();
+//                    SavingPostInformationToDatabase();
+//                }
+//                else {
+//                    String message = task.getException().getMessage();
+//                    Toast.makeText(PostActivity.this, "Error occured" + message, Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
-                    downloadUrl = task.getResult().getMetadata().getReference().getDownloadUrl().toString();
+       filePath.putFile(ImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+           @Override
+           public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+               filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                   @Override
+                   public void onSuccess(Uri uri) {
+
+                    String downloadUrl = uri.toString();
                     Toast.makeText(PostActivity.this, "Image uploaded successfully", Toast.LENGTH_SHORT).show();
-                    SavingPostInformationToDatabase();
-                }
-                else {
-                    String message = task.getException().getMessage();
-                    Toast.makeText(PostActivity.this, "Error occured" + message, Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+                    SavingPostInformationToDatabase(downloadUrl);
+
+                   }
+               });
+           }
+       });
+
     }
 
-    private void SavingPostInformationToDatabase() {
+    private void SavingPostInformationToDatabase(final String downloadUrl) {
 
         UserRef.child(current_user_id).addValueEventListener(new ValueEventListener() {
             @Override

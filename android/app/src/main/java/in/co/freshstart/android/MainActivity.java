@@ -4,17 +4,27 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.circularreveal.cardview.CircularRevealCardView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -33,22 +43,25 @@ public class MainActivity extends AppCompatActivity {
 
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
-    private RecyclerView recyclerView;
+    private RecyclerView PostList;
     private Toolbar mToolbar;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private FirebaseAuth mAuth;
-    private DatabaseReference UserRef;
+    private DatabaseReference UserRef, PostsRef;
     private CircleImageView navProfileImage;
     private TextView navProfileName;
     String CurrentUserID;
     private FirebaseUser user;
     private ImageButton addNewPostButton;
+    private static final String TAG = "FreshStart";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.i(TAG, "Executing onCreate");
 
         mAuth = FirebaseAuth.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -67,10 +80,18 @@ public class MainActivity extends AppCompatActivity {
         navProfileName = navView.findViewById(R.id.nav_user_full_name);
         addNewPostButton = (ImageButton) findViewById(R.id.add_new_post_button);
 
+        PostList = (RecyclerView) findViewById(R.id.all_users_post_list);
+        PostList.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        PostList.setLayoutManager(linearLayoutManager);
+
         if (user != null){
 
             CurrentUserID = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
             UserRef = FirebaseDatabase.getInstance().getReference().child("Users");
+            PostsRef = FirebaseDatabase.getInstance().getReference().child("Posts");
 
             UserRef.child(CurrentUserID).addValueEventListener(new ValueEventListener() {
                 @Override
@@ -109,6 +130,95 @@ public class MainActivity extends AppCompatActivity {
                 SendUserToPostActivity();
             }
         });
+
+    }
+
+    private void showAllUsersPosts() {
+
+        FirebaseRecyclerOptions<Posts> options =
+                new FirebaseRecyclerOptions.Builder<Posts>()
+                .setQuery(PostsRef, Posts.class)
+                .build();
+
+        Log.i(TAG, "showAllUserPosts called");
+        FirebaseRecyclerAdapter<Posts, PostsViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Posts, PostsViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull PostsViewHolder holder, int position, @NonNull Posts model) {
+
+                Log.i(TAG, "Executing onBindViewHolder");
+
+                holder.setUsername(model.getUsername());
+                holder.setDate(model.getDate());
+                holder.setTime(model.getTime());
+                holder.setDescription(model.getDescription());
+                holder.setPostimage(getApplicationContext(), model.getPostimage());
+                holder.setProfileimage(getApplicationContext(),  model.getProfileimage());
+
+            }
+
+            @NonNull
+            @Override
+            public PostsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+                Log.i(TAG, "Executing onBindViewHolder");
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.all_posts_layout, parent, false);
+                PostsViewHolder viewHolder = new PostsViewHolder(view);
+                return viewHolder;
+
+            }
+        };
+        PostList.setAdapter(firebaseRecyclerAdapter);
+        firebaseRecyclerAdapter.startListening();
+    }
+
+    public static class PostsViewHolder extends RecyclerView.ViewHolder {
+
+        View mView;
+
+        public PostsViewHolder(@NonNull View itemView) {
+            super(itemView);
+            mView = itemView;
+            Log.i(TAG, "PostViewHolder constructor called");
+        }
+
+        public void setUsername(String username) {
+
+            TextView postUsername = (TextView) mView.findViewById(R.id.timeline_post_profile_name);
+            postUsername.setText(username);
+        }
+
+        public void setProfileimage(Context ctx, String profileimage) {
+
+            CircleImageView image = (CircleImageView) mView.findViewById(R.id.timeline_post_profile_image);
+            Picasso.with(ctx).load(profileimage).into(image);
+        }
+
+        public void setTime(String time) {
+
+            TextView post_time = (TextView) mView.findViewById(R.id.timeline_post_time);
+            post_time.setText(time);
+        }
+
+        public void setDate(String date) {
+
+            TextView post_date = (TextView) mView.findViewById(R.id.timeline_post_date);
+            post_date.setText(date);
+        }
+
+        public void setDescription(String description) {
+
+            TextView Description = (TextView) mView.findViewById(R.id.timeline_post_description);
+            Description.setText(description);
+        }
+
+        public void setPostimage(Context ctx, String postimage) {
+
+            ImageView image = (ImageView) mView.findViewById(R.id.timeline_post_image);
+            Picasso.with(ctx).load(postimage).into(image);
+
+        }
+
+
     }
 
     private void SendUserToPostActivity() {
@@ -122,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        Log.i(TAG, "Executing onStart");
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         if(currentUser == null){
@@ -131,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
 
             CheckUserExistence();
         }
+        showAllUsersPosts();
     }
 
     private void CheckUserExistence() {
