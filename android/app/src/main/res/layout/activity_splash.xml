@@ -9,6 +9,6 @@
 
     <include
         android:id="@+id/splash_first_layout_child"
-        layout="@layout/welcome_page_1" />
+        layout="@layout/splash_page_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,13 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/welcome_root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FreshWelcomeActivity">
-
-    <include
-        android:id="@+id/welcome_first_layout_child"
-        layout="@layout/welcome_page_1" />
+    tools:context=".FreshPostActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

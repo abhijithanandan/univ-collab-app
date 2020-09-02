@@ -3,9 +3,7 @@ package in.co.freshstart.android;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.view.ViewCompat;
-import androidx.transition.Fade;
 import androidx.transition.Scene;
-import androidx.transition.Slide;
 import androidx.transition.Transition;
 import androidx.transition.TransitionInflater;
 import androidx.transition.TransitionManager;
@@ -13,9 +11,7 @@ import androidx.transition.TransitionManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.transition.Explode;
 import android.util.Log;
-import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -83,7 +79,7 @@ public class SplashActivity extends AppCompatActivity {
         Log.i(TAG, "Starting animation in Splash Activity");
         Scene scene;
         sceneRoot = (ViewGroup) findViewById(R.id.splash_root_layout);
-        scene = Scene.getSceneForLayout(sceneRoot, R.layout.welcome_page_2, this);
+        scene = Scene.getSceneForLayout(sceneRoot, R.layout.splash_page_2, this);
 
         Transition transition = TransitionInflater.from(this)
                 .inflateTransition(R.transition.changebound_transition);
