@@ -12,7 +12,7 @@
         android:layout_height="83dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/colorBackground"
+        android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
